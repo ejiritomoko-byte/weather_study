@@ -415,7 +415,7 @@ function renderExamSelect() {
 
 function renderExamFlow() {
   $("#selected-exam-title").textContent = `第${selectedExam}回`;
-  $("#selected-exam-summary").textContent = "一般知識、専門知識、記述の順に進めます。解答例は各ステップの下に表示します。";
+  $("#selected-exam-summary").textContent = "第56回〜第65回の過去問を収録しました。各回の問題と解答例を確認できます。";
   $("#exam-stepper").innerHTML = examStages
     .map((stage, index) => {
       const isActive = stage.id === selectedExamStage;
