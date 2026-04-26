@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>気象予報士試験 学習アプリ</title>
+    <link rel="stylesheet" href="note-workflow.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="学習ナビゲーション">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">W</span>
+          <div>
+            <p class="eyebrow">Weather License</p>
+            <h1>気象予報士試験</h1>
+          </div>
+        </div>
+
+        <nav class="nav-tabs" aria-label="主要画面">
+          <button class="nav-tab is-active" data-view="dashboard" type="button">
+            <span aria-hidden="true">⌂</span> ホーム
+          </button>
+          <button class="nav-tab" data-view="overview" type="button">
+            <span aria-hidden="true">i</span> 総論
+          </button>
+          <button class="nav-tab" data-view="exams" type="button">
+            <span aria-hidden="true">≡</span> 過去問
+          </button>
+          <button class="nav-tab" data-view="practice" type="button">
+            <span aria-hidden="true">?</span> 問題演習
+          </button>
+          <button class="nav-tab" data-view="cards" type="button">
+            <span aria-hidden="true">□</span> 暗記カード
+          </button>
+          <button class="nav-tab" data-view="plan" type="button">
+            <span aria-hidden="true">✓</span> 学習計画
+          </button>
+        </nav>
+
+        <section class="exam-snapshot" aria-label="試験構成">
+          <h2>試験構成</h2>
+          <dl>
+            <div>
+              <dt>一般知識</dt>
+              <dd>法規・物理・熱力学</dd>
+            </div>
+            <div>
+              <dt>専門知識</dt>
+              <dd>観測・予報・防災</dd>
+            </div>
+            <div>
+              <dt>記述</dt>
+              <dd>天気図・文章答案</dd>
+            </div>
+          </dl>
+        </section>
+      </aside>
+
+      <main class="main-panel">
+        <section class="view is-visible" id="dashboard" aria-labelledby="dashboard-title">
+          <div class="hero">
+            <div>
+              <p class="eyebrow">今日の学習</p>
+              <h2 id="dashboard-title">移動中でも、過去問と公式資料を小さく回す。</h2>
+              <p class="hero-copy">回を選んで一般知識、専門知識、記述へ。総論とクイズで公式資料の読み方も固めます。</p>
+            </div>
+            <div class="weather-visual" aria-hidden="true">
+              <div class="sun"></div>
+              <div class="cloud cloud-a"></div>
+              <div class="cloud cloud-b"></div>
+              <div class="front-line"></div>
+            </div>
+          </div>
+
+          <div class="stats-grid" aria-label="学習状況">
+            <article class="metric">
+              <span class="metric-label">総合進捗</span>
+              <strong id="overall-progress">0%</strong>
+              <div class="progress-track"><span id="overall-bar"></span></div>
+            </article>
+            <article class="metric">
+              <span class="metric-label">連続学習</span>
+              <strong id="study-streak">0日</strong>
+              <p>今日のタスク完了で更新</p>
+            </article>
+            <article class="metric">
+              <span class="metric-label">正答率</span>
+              <strong id="accuracy">--</strong>
+              <p id="answer-count">まだ演習なし</p>
+            </article>
+          </div>
+
+          <section class="section-block" aria-labelledby="focus-title">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Focus</p>
+                <h3 id="focus-title">優先して固める分野</h3>
+              </div>
+              <button class="icon-button" id="reset-progress" type="button" aria-label="進捗をリセット" title="進捗をリセット">↺</button>
+            </div>
+            <div class="domain-grid" id="domain-grid"></div>
+          </section>
+        </section>
+
+        <section class="view" id="overview" aria-labelledby="overview-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">JMA Expert Materials</p>
+              <h2 id="overview-title">総論と公式資料クイズ</h2>
+            </div>
+            <a class="secondary-link" href="https://www.jma.go.jp/jma/kishou/know/expert/index.html" target="_blank" rel="noreferrer">気象庁ページ</a>
+          </div>
+
+          <div class="overview-grid" id="overview-grid"></div>
+
+          <article class="quiz-panel overview-quiz">
+            <div class="quiz-meta">
+              <span id="overview-question-domain">総論</span>
+              <span id="overview-question-progress">1 / 1</span>
+            </div>
+            <h3 id="overview-question-text"></h3>
+            <div class="choices" id="overview-choices"></div>
+            <div class="answer-box" id="overview-answer-box" hidden>
+              <strong id="overview-answer-result"></strong>
+              <p id="overview-answer-explanation"></p>
+            </div>
+            <div class="quiz-actions">
+              <button class="primary-button" id="overview-next-question" type="button">次の総論クイズ</button>
+            </div>
+          </article>
+        </section>
+
+        <section class="view" id="exams" aria-labelledby="exams-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Archive</p>
+              <h2 id="exams-title">過去問ステップ</h2>
+            </div>
+            <div class="exam-toolbar compact">
+              <label>
+                <span>過去問を選択</span>
+                <select id="exam-select" aria-label="過去問の回を選択"></select>
+              </label>
+            </div>
+          </div>
+
+          <div class="exam-flow">
+            <div class="exam-current">
+              <p class="eyebrow">Selected Exam</p>
+              <h3 id="selected-exam-title">第65回</h3>
+              <p id="selected-exam-summary">一般知識、専門知識、記述の順に進めます。</p>
+            </div>
+            <div class="exam-stepper" id="exam-stepper" aria-label="過去問の進行順"></div>
+          </div>
+          <div class="exam-stage-panel" id="exam-stage-panel"></div>
+        </section>
+
+        <section class="view" id="practice" aria-labelledby="practice-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Practice</p>
+              <h2 id="practice-title">分野別クイズ</h2>
+            </div>
+            <div class="segmented" role="tablist" aria-label="出題分野">
+              <button class="segment is-active" data-domain="general" type="button">一般</button>
+              <button class="segment" data-domain="specialized" type="button">専門</button>
+              <button class="segment" data-domain="practical" type="button">記述</button>
+            </div>
+          </div>
+
+          <article class="quiz-panel">
+            <div class="quiz-meta">
+              <span id="question-domain">一般知識</span>
+              <span id="question-progress">1 / 1</span>
+            </div>
+            <h3 id="question-text"></h3>
+            <div class="choices" id="choices"></div>
+            <div class="answer-box" id="answer-box" hidden>
+              <strong id="answer-result"></strong>
+              <p id="answer-explanation"></p>
+            </div>
+            <div class="quiz-actions">
+              <button class="primary-button" id="next-question" type="button">次の問題</button>
+              <button class="secondary-button" id="mark-weak" type="button">弱点に追加</button>
+            </div>
+          </article>
+        </section>
+
+        <section class="view" id="cards" aria-labelledby="cards-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Cards</p>
+              <h2 id="cards-title">暗記カード</h2>
+            </div>
+            <button class="secondary-button" id="shuffle-card" type="button">シャッフル</button>
+          </div>
+
+          <article class="flashcard" id="flashcard" tabindex="0" role="button" aria-live="polite">
+            <p id="card-tag"></p>
+            <h3 id="card-front"></h3>
+            <div class="card-back" id="card-back" hidden></div>
+          </article>
+          <p class="hint">カードをクリックすると答えを表示します。</p>
+        </section>
+
+        <section class="view" id="plan" aria-labelledby="plan-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Plan</p>
+              <h2 id="plan-title">7日間の学習計画</h2>
+            </div>
+            <button class="primary-button" id="complete-today" type="button">今日の学習を完了</button>
+          </div>
+          <div class="plan-list" id="plan-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="note-workflow.js"></script>
+  </body>
+</html>
