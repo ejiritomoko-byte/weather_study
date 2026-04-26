@@ -341,102 +341,7 @@ const weeklyPlan = [
   ["Day 7", "記述答案の演習", "根拠、時系列、指定語句を意識して答案化"],
 ];
 
-const pastExams = [
-  exam(56, [
-    ["answer", "学科 解答", "cwfe_56_a.pdf"],
-    ["answer", "合格基準", "cwfe_56_e.pdf"],
-    ["general", "一般知識 問題", "gakka(ippan).pdf"],
-    ["specialized", "専門知識 問題", "gakka(senmon).pdf"],
-    ["written", "記述1 解答用紙", "jitsugi1(kai).pdf"],
-    ["written", "記述1 問題", "jitsugi1(mon).pdf"],
-    ["written", "記述2 解答用紙", "jitsugi2(kai).pdf"],
-    ["written", "記述2 問題", "jitsugi2(mon).pdf"],
-  ]),
-  exam(57, [
-    ["answer", "学科 解答", "cwfe_57_a.pdf"],
-    ["answer", "合格基準", "cwfe_57_e.pdf"],
-    ["general", "一般知識 問題", "gakka(ippan).pdf"],
-    ["specialized", "専門知識 問題", "gakka(senmon).pdf"],
-    ["written", "記述1 解答用紙", "jitsugi1(kai).pdf"],
-    ["written", "記述1 問題", "jitsugi1(mon).pdf"],
-    ["written", "記述2 解答用紙", "jitsugi2(kai).pdf"],
-    ["written", "記述2 問題", "jitsugi2(mon).pdf"],
-  ]),
-  exam(58, [
-    ["answer", "学科・記述 解答例", "cwfe_58_a.pdf"],
-    ["general", "一般知識 問題", "gakka(ippan).pdf"],
-    ["specialized", "専門知識 問題", "gakka(senmon).pdf"],
-    ["written", "記述1 解答用紙", "jitsugi1(kai).pdf"],
-    ["written", "記述1 問題", "jitsugi1(mon).pdf"],
-    ["written", "記述2 解答用紙", "jitsugi2(kai).pdf"],
-    ["written", "記述2 問題", "jitsugi2(mon).pdf"],
-  ]),
-  exam(59, [
-    ["answer", "学科 解答", "cwfe_59_a.pdf"],
-    ["answer", "合格基準", "cwfe_59_e.pdf"],
-    ["general", "一般知識 問題", "gakka(ippan).pdf"],
-    ["specialized", "専門知識 問題", "gakka(senmon).pdf"],
-    ["written", "記述1 解答用紙", "jitsugi1(kai).pdf"],
-    ["written", "記述1 問題", "jitsugi1(mon).pdf"],
-    ["written", "記述2 解答用紙", "jitsugi2(kai).pdf"],
-    ["written", "記述2 問題", "jitsugi2(mon).pdf"],
-  ]),
-  exam(60, [
-    ["answer", "学科・記述 解答例", "cwfe_60_a_collection.pdf"],
-    ["answer", "合格基準", "cwfe_60_e.pdf"],
-    ["general", "一般知識 問題", "gakka(ippan).pdf"],
-    ["specialized", "専門知識 問題", "gakka(senmon).pdf"],
-    ["written", "記述1 解答用紙", "jitsugi1(kai).pdf"],
-    ["written", "記述1 問題", "jitsugi1(mon).pdf"],
-    ["written", "記述2 解答用紙", "jitsugi2(kai) .pdf"],
-    ["written", "記述2 問題", "jitsugi2(mon).pdf"],
-  ], "cwfe_60_z_collection"),
-  exam(61, [
-    ["answer", "学科・記述 解答例", "cwfe_61_a.pdf"],
-    ["general", "一般知識 問題", "gakka(ippan).pdf"],
-    ["specialized", "専門知識 問題", "gakka(senmon).pdf"],
-    ["written", "記述1 解答用紙", "jitsugi1(kai).pdf"],
-    ["written", "記述1 問題", "jitsugi1(mon).pdf"],
-    ["written", "記述2 解答用紙", "jitsugi2(kai) .pdf"],
-    ["written", "記述2 問題", "jitsugi2(mon).pdf"],
-  ]),
-  exam(62, [
-    ["answer", "学科・記述 解答例", "cwfe_62_a.pdf"],
-    ["general", "一般知識 問題", "gakka(ippan).pdf"],
-    ["specialized", "専門知識 問題", "gakka(senmon).pdf"],
-    ["written", "記述1 解答用紙", "jitsugi1(kai).pdf"],
-    ["written", "記述1 問題", "jitsugi1(mon).pdf"],
-    ["written", "記述2 解答用紙", "jitsugi2(kai) .pdf"],
-    ["written", "記述2 問題", "jitsugi2(mon).pdf"],
-  ]),
-  exam(63, [
-    ["answer", "学科・記述 解答例", "cwfe_63_a(gakka jitsugi_kaitourei).pdf"],
-    ["general", "一般知識 問題", "gakka(ippan_mondai).pdf"],
-    ["specialized", "専門知識 問題", "gakka(senmon_mondai).pdf"],
-    ["written", "記述1 解答用紙", "jitsugi1(kaitouyoushi).pdf"],
-    ["written", "記述1 問題", "jitsugi1(mondai).pdf"],
-    ["written", "記述2 解答用紙", "jitsugi2(kaitouyoushi).pdf"],
-    ["written", "記述2 問題", "jitsugi2(mondai).pdf"],
-  ]),
-  exam(64, [
-    ["answer", "学科・記述 解答例", "cwfe_64_a(gakka jitsugi_kaitourei).pdf"],
-    ["general", "一般知識 問題", "gakka(ippan_mondai).pdf"],
-    ["specialized", "専門知識 問題", "gakka(senmon_mondai).pdf"],
-    ["written", "記述1 解答用紙", "jitsugi1(kaitouyoushi).pdf"],
-    ["written", "記述1 問題", "jitsugi1(mondai).pdf"],
-    ["written", "記述2 解答用紙", "jitsugi2(kaitouyoushi).pdf"],
-    ["written", "記述2 問題", "jitsugi2(mondai).pdf"],
-  ]),
-  exam(65, [
-    ["answer", "学科・記述 解答例", "cwfe_65_a(gakka jitsugi_kaitourei).pdf"],
-    ["general", "一般知識 問題", "gakka(ippan_mondai).pdf"],
-    ["specialized", "専門知識 問題", "gakka(senmon_mondai).pdf"],
-    ["written", "記述1 解答用紙", "jitsugi1(kaitouyoushi).pdf"],
-    ["written", "記述1 問題", "jitsugi1(mondai).pdf"],
-    ["written", "記述2 解答用紙", "jitsugi2(kaitouyoushi).pdf"],
-    ["written", "記述2 問題", "jitsugi2(mondai).pdf"],
-  ]),
-].flat();
+const pastExams = Array.from({ length: 10 }, (_, index) => 56 + index);
 
 const examStages = [
   { id: "general", label: "一般知識", guidance: "まず15問を通して解き、法規・熱力学・力学の穴をメモします。" },
@@ -467,16 +372,6 @@ let selectedExam = Number(state.selectedExam || 65);
 let selectedExamStage = state.examStage || "general";
 
 const $ = (selector) => document.querySelector(selector);
-
-function exam(number, files, folder = `cwfe_${number}_z`) {
-  return files.map(([kind, title, filename]) => ({
-    number,
-    kind,
-    title,
-    filename,
-    path: `past-exams/${folder}/${filename}`,
-  }));
-}
 
 function loadState() {
   try {
@@ -584,7 +479,7 @@ function renderQuestion() {
 }
 
 function renderExamSelect() {
-  const numbers = [...new Set(pastExams.map((item) => item.number))].sort((a, b) => b - a);
+  const numbers = [...pastExams].sort((a, b) => b - a);
   $("#exam-select").innerHTML = numbers
     .map((number) => `<option value="${number}" ${number === selectedExam ? "selected" : ""}>第${number}回</option>`)
     .join("");
@@ -592,7 +487,7 @@ function renderExamSelect() {
 
 function renderExamFlow() {
   $("#selected-exam-title").textContent = `第${selectedExam}回`;
-  $("#selected-exam-summary").textContent = "第56回〜第65回の過去問を収録しました。各回の問題と解答例を確認できます。";
+  $("#selected-exam-summary").textContent = "公開版では公式PDFを転載せず、回別の解答練習枠と自作問題で学習します。";
   $("#exam-stepper").innerHTML = examStages
     .map((stage, index) => {
       const isActive = stage.id === selectedExamStage;
@@ -609,9 +504,6 @@ function renderExamFlow() {
 
 function renderExamStage() {
   const stage = examStages.find((item) => item.id === selectedExamStage);
-  const files = pastExams.filter((item) => item.number === selectedExam);
-  const stageFiles = files.filter((item) => item.kind === selectedExamStage);
-  const answerFiles = files.filter((item) => item.kind === "answer");
   const practiceMarkup =
     selectedExamStage === "written"
       ? renderWrittenPractice()
@@ -625,14 +517,10 @@ function renderExamStage() {
         <p>${stage.guidance}</p>
       </div>
       ${practiceMarkup}
-      <div class="exam-link-list">
-        ${stageFiles.map(renderExamLink).join("")}
-      </div>
       <div class="answer-reference">
-        <h4>解答・基準</h4>
-        <div class="exam-link-list compact-links">
-          ${answerFiles.map(renderExamLink).join("")}
-        </div>
+        <h4>公開版の扱い</h4>
+        <p>公式の試験問題・解答例は個人利用目的の資料です。この公開アプリにはPDFや問題文を転載せず、解答入力、記述メモ、自作問題で学習できるようにしています。</p>
+        <a class="source-link" href="https://www.jmbsc.or.jp/jp/examination/examination-7.html" target="_blank" rel="noreferrer">公式の過去問ページを確認</a>
       </div>
     </article>
   `;
@@ -712,15 +600,6 @@ function getExamAnswerKey(stageId, questionNumber) {
 
 function countAnswered(stageId) {
   return Array.from({ length: 15 }, (_, index) => getExamAnswerKey(stageId, index + 1)).filter((key) => state.pastExamAnswers[key]).length;
-}
-
-function renderExamLink(file) {
-  return `
-    <a class="exam-file-link" href="${encodeURI(file.path)}" target="_blank" rel="noreferrer">
-      <span>${file.title}</span>
-      <small>${file.filename}</small>
-    </a>
-  `;
 }
 
 function answerQuestion(choiceIndex) {

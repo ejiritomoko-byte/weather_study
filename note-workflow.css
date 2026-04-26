@@ -435,23 +435,6 @@ h1 {
   gap: 10px;
 }
 
-.pdf-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 36px;
-  border-radius: 8px;
-  background: var(--teal);
-  color: white;
-  padding: 8px 12px;
-  font-weight: 800;
-  text-decoration: none;
-}
-
-.pdf-link:hover {
-  background: var(--teal-dark);
-}
-
 .secondary-link {
   display: inline-flex;
   align-items: center;
@@ -617,6 +600,22 @@ h1 {
 
 .answer-reference h4 {
   margin: 0 0 10px;
+}
+
+.answer-reference p {
+  margin-bottom: 10px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.source-link {
+  color: var(--teal-dark);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.source-link:hover {
+  text-decoration: underline;
 }
 
 .exam-practice {

@@ -1,0 +1,28 @@
+{
+  "general": [
+    "general_atmosphere_structure",
+    "general_thermodynamics",
+    "general_precipitation",
+    "general_radiation",
+    "general_dynamics",
+    "general_weather_phenomena",
+    "general_climate",
+    "general_law"
+  ],
+  "specialized": [
+    "special_observation",
+    "special_nwp",
+    "special_short_medium_forecast",
+    "special_long_range_forecast",
+    "special_local_forecast",
+    "special_nowcast",
+    "special_disaster",
+    "special_forecast_verification",
+    "special_forecast_application"
+  ],
+  "practical": [
+    "practical_synoptic_analysis",
+    "practical_local_forecast",
+    "practical_typhoon_emergency"
+  ]
+}
