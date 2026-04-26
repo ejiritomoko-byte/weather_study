@@ -1,0 +1,59 @@
+[
+  {
+    "area": "law",
+    "label": "気象業務法・予報業務許可",
+    "tags": ["general_law"],
+    "sources": [
+      "気象業務法第17条",
+      "気象業務法第23条",
+      "予報業務の許可について",
+      "予報業務を行うためのガイドブック",
+      "予報業務の許可等に関する審査基準"
+    ],
+    "app_use": ["総論カード", "法規クイズ", "暗記カード"]
+  },
+  {
+    "area": "observation",
+    "label": "観測成果の利用",
+    "tags": ["special_observation"],
+    "sources": [
+      "気象観測ガイドブック",
+      "気象の専門家向け資料集",
+      "高層天気図",
+      "FAX天気図"
+    ],
+    "app_use": ["専門知識クイズ", "観測カード", "実技メモ"]
+  },
+  {
+    "area": "numerical_prediction",
+    "label": "数値予報・ガイダンス",
+    "tags": ["special_nwp", "special_short_medium_forecast", "special_forecast_application"],
+    "sources": [
+      "数値予報解説資料集",
+      "短期予報解説資料",
+      "週間予報解説資料"
+    ],
+    "app_use": ["専門知識クイズ", "数値予報カード", "実技メモ"]
+  },
+  {
+    "area": "warnings_disaster",
+    "label": "防災気象情報・キキクル",
+    "tags": ["special_disaster", "practical_typhoon_emergency"],
+    "sources": [
+      "気象の専門家向け資料集",
+      "防災気象情報と警戒レベルとの対応",
+      "キキクル関連資料"
+    ],
+    "app_use": ["総論カード", "防災カード", "実技メモ"]
+  },
+  {
+    "area": "terminology",
+    "label": "専門用語・季節予報用語",
+    "tags": ["special_long_range_forecast", "special_forecast_application", "practical_synoptic_analysis"],
+    "sources": [
+      "専門用語集",
+      "季節予報用語集"
+    ],
+    "app_use": ["暗記カード", "実技答案用語"]
+  }
+]

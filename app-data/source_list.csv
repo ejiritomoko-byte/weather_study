@@ -5,3 +5,6 @@ title,url,type,download_date,use_scope,memo
 気象の専門家向け資料集,https://www.jma.go.jp/jma/kishou/know/expert/index.html,jma_reference,2026-04-27,reference,専門知識・実技の自作解説作成用
 数値予報解説資料集,https://www.jma.go.jp/jma/kishou/books/nwpkaisetu/nwpkaisetu.html,jma_reference,2026-04-27,reference,数値予報・データ同化・ガイダンスの自作解説用
 気象観測ガイドブック,https://www.jma.go.jp/jma/kishou/know/kansoku_guide/hpc.html,jma_reference,2026-04-27,reference,観測分野の自作解説用
+気象業務法 第17条,https://www.jma.go.jp/jma/kishou/info/ml-17.html,jma_law_reference,2026-04-27,reference,予報業務許可の条文確認
+気象業務法 第23条,https://www.jma.go.jp/jma/kishou/info/ml-23.html,jma_law_reference,2026-04-27,reference,警報の制限の条文確認
+気象業務法 e-Gov法令検索,https://laws.e-gov.go.jp/law/327AC0000000165,jma_law_reference,2026-04-27,reference,法規の最新条文確認
