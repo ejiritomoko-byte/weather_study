@@ -619,6 +619,97 @@ h1 {
   margin: 0 0 10px;
 }
 
+.exam-practice {
+  display: grid;
+  gap: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f8fbfb;
+  padding: 16px;
+}
+
+.practice-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.practice-head h4 {
+  margin: 0 0 4px;
+}
+
+.practice-head p {
+  margin: 0;
+}
+
+.exam-question-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.exam-question-card {
+  display: grid;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  padding: 10px;
+}
+
+.exam-question-card strong {
+  font-size: 0.92rem;
+}
+
+.answer-buttons {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.answer-buttons button {
+  min-width: 0;
+  min-height: 32px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: white;
+  color: var(--muted);
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.answer-buttons button.is-selected {
+  border-color: var(--teal);
+  background: var(--teal);
+  color: white;
+}
+
+.written-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.written-note {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.written-note textarea {
+  width: 100%;
+  resize: vertical;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  color: var(--ink);
+  padding: 10px;
+  font: inherit;
+  line-height: 1.6;
+}
+
 .domain-card header {
   display: flex;
   justify-content: space-between;
@@ -875,9 +966,16 @@ h1 {
   .past-exam-grid,
   .overview-grid,
   .exam-flow,
+  .exam-question-grid,
+  .written-grid,
   .exam-link-list,
   .exam-link-list.compact-links {
     grid-template-columns: 1fr;
+  }
+
+  .practice-head {
+    align-items: stretch;
+    flex-direction: column;
   }
 
   .weather-visual {

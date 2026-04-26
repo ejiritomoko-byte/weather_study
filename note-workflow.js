@@ -39,6 +39,36 @@ const questions = {
       answer: 1,
       explanation: "業として予報を提供する場合は、許可や責任体制に関する法規の理解が問われます。",
     },
+    {
+      text: "温位が高度とともに増加している大気の安定度として最も適切なのはどれですか。",
+      choices: ["安定", "絶対不安定", "必ず中立", "必ず飽和している"],
+      answer: 0,
+      explanation: "温位が上方ほど大きい状態では、空気塊が鉛直に動きにくく、安定と判断します。",
+    },
+    {
+      text: "黒体放射で、温度が高いほど放射エネルギーはどうなりますか。",
+      choices: ["増加する", "減少する", "ゼロになる", "波長だけが長くなる"],
+      answer: 0,
+      explanation: "ステファン・ボルツマンの法則により、黒体放射の全エネルギーは絶対温度の4乗に比例します。",
+    },
+    {
+      text: "飽和水蒸気圧について正しい説明はどれですか。",
+      choices: ["温度が高いほど大きい", "温度と無関係", "気圧が高いほど必ずゼロになる", "海上だけで定義される"],
+      answer: 0,
+      explanation: "飽和水蒸気圧は温度が高いほど大きくなり、湿度や凝結の理解に直結します。",
+    },
+    {
+      text: "気圧傾度力の向きとして正しいものはどれですか。",
+      choices: ["高圧側から低圧側へ向く", "低圧側から高圧側へ向く", "常に北向き", "常に風と逆向き"],
+      answer: 0,
+      explanation: "気圧傾度力は気圧の高い側から低い側へ働き、風を生み出す基本の力です。",
+    },
+    {
+      text: "雲粒が雨滴へ成長する暖かい雨の主な過程はどれですか。",
+      choices: ["衝突・併合", "地衡風平衡", "放射平衡", "オゾン生成"],
+      answer: 0,
+      explanation: "暖かい雲では、雲粒同士が衝突・併合して大きな雨滴へ成長します。",
+    },
   ],
   specialized: [
     {
@@ -59,6 +89,36 @@ const questions = {
       answer: 0,
       explanation: "積乱雲に伴う激しい突風への注意を促す情報で、空の変化や避難行動の判断に使います。",
     },
+    {
+      text: "アメダスの降水量観測で一般に使われる単位はどれですか。",
+      choices: ["mm", "hPa", "m/s", "K"],
+      answer: 0,
+      explanation: "降水量は深さに換算した量としてmmで表します。",
+    },
+    {
+      text: "気象衛星の赤外画像で主に分かるものはどれですか。",
+      choices: ["雲頂温度の高低", "地上の正確な風速だけ", "雨粒の個数だけ", "気圧計の型番"],
+      answer: 0,
+      explanation: "赤外画像は放射温度を利用するため、雲頂高度や雲の発達の推定に役立ちます。",
+    },
+    {
+      text: "ガイダンスの説明として適切なのはどれですか。",
+      choices: ["数値予報結果を統計的に補正し予報要素へ変換する資料", "観測を行わない予報", "天気図を描かない規則", "警報を必ず解除する資料"],
+      answer: 0,
+      explanation: "ガイダンスは数値予報の系統誤差を補正し、気温や降水確率などの予報に使われます。",
+    },
+    {
+      text: "線状降水帯で特に問題となる現象はどれですか。",
+      choices: ["同じ地域で非常に激しい雨が続く", "必ず快晴が続く", "気温が常に氷点下になる", "風が完全に止まる"],
+      answer: 0,
+      explanation: "発達した雨域が線状に停滞・継続し、同じ場所で大雨災害の危険が高まります。",
+    },
+    {
+      text: "降水短時間予報の利用目的として近いものはどれですか。",
+      choices: ["数時間先までの降水域の変化を確認する", "100年後の気候だけを見る", "地震発生時刻を予測する", "海底地形だけを読む"],
+      answer: 0,
+      explanation: "降水短時間予報は直近の降水分布や移動を把握し、防災判断の材料になります。",
+    },
   ],
   practical: [
     {
@@ -78,6 +138,36 @@ const questions = {
       choices: ["気圧傾度が大きく風が強い", "必ず晴れる", "湿度が0%になる", "風が完全に止まる"],
       answer: 0,
       explanation: "等圧線の込み具合は気圧傾度の大きさを示し、風の強さを読む基本材料です。",
+    },
+    {
+      text: "記述答案で『北上している』と書く前に確認したいものはどれですか。",
+      choices: ["異なる時刻の位置変化", "紙の色", "受験番号", "選択肢の個数"],
+      answer: 0,
+      explanation: "移動方向や速度は、複数時刻の位置を比較して根拠を示します。",
+    },
+    {
+      text: "850hPa天気図で気温と風を合わせて読む目的として近いものはどれですか。",
+      choices: ["下層の暖湿気流入を確認する", "海底水温だけを読む", "成層圏のオゾンだけを読む", "観測所番号を暗記する"],
+      answer: 0,
+      explanation: "850hPa面は下層の暖湿気移流や前線付近の構造を読む材料になります。",
+    },
+    {
+      text: "『指定語句を用いて』という設問で大切なことはどれですか。",
+      choices: ["指定語句を文脈に合う形で必ず使う", "指定語句を無視する", "指定語句だけを羅列する", "字数を大幅に超える"],
+      answer: 0,
+      explanation: "指定語句は採点観点に直結しやすいため、意味が通る答案の中に入れます。",
+    },
+    {
+      text: "鉛直流の分布を記述するときに有効な表現はどれですか。",
+      choices: ["高度・場所・上昇/下降を組み合わせる", "色の好みを書く", "図番号だけを書く", "断定を避けて何も書かない"],
+      answer: 0,
+      explanation: "どの高度で、どの領域に、上昇流または下降流があるのかを具体的に示します。",
+    },
+    {
+      text: "実技の見直しで優先したいものはどれですか。",
+      choices: ["設問の問いに直接答えているか", "文字を飾っているか", "余白を全部埋めたか", "同じ語句を何度も繰り返したか"],
+      answer: 0,
+      explanation: "答案は設問の要求に直接答え、資料に基づく根拠を過不足なく示すことが重要です。",
     },
   ],
 };
@@ -168,6 +258,76 @@ const cards = [
     tag: "防災",
     front: "警報と注意報の違いを一言でいうと。",
     back: "警報は重大な災害のおそれ、注意報は災害のおそれがある場合に発表されます。",
+  },
+  {
+    tag: "法規",
+    front: "予報業務許可で押さえる観点は何ですか。",
+    back: "業として予報を行うか、対象・目的・予報事項・体制がどうなっているかを確認します。",
+  },
+  {
+    tag: "熱力学",
+    front: "乾燥断熱減率の目安は何ですか。",
+    back: "未飽和空気では約1℃/100mです。湿潤断熱減率は凝結熱の影響でこれより小さくなります。",
+  },
+  {
+    tag: "熱力学",
+    front: "相当温位が高い空気は何を示しやすいですか。",
+    back: "暖かく湿った空気を示し、対流活動や大雨ポテンシャルを読む材料になります。",
+  },
+  {
+    tag: "水蒸気",
+    front: "露点温度とは何ですか。",
+    back: "空気を冷やしたとき、水蒸気が飽和して凝結し始める温度です。",
+  },
+  {
+    tag: "放射",
+    front: "太陽放射と地球放射の違いは何ですか。",
+    back: "太陽放射は主に短波、地球放射は主に長波として扱います。",
+  },
+  {
+    tag: "力学",
+    front: "地衡風とは何ですか。",
+    back: "気圧傾度力とコリオリ力がつり合って吹く、摩擦の小さい上空の風です。",
+  },
+  {
+    tag: "力学",
+    front: "北半球の低気圧周辺の風向はどうなりますか。",
+    back: "摩擦の影響で反時計回りに中心へ吹き込みます。",
+  },
+  {
+    tag: "観測",
+    front: "赤外衛星画像で読みやすいものは何ですか。",
+    back: "雲頂温度です。雲頂が高いほど温度が低く、発達した雲の判別に役立ちます。",
+  },
+  {
+    tag: "観測",
+    front: "レーダーエコーで強い反射が示すものは何ですか。",
+    back: "降水粒子が多い、または大きい可能性があり、強い降水域の把握に使います。",
+  },
+  {
+    tag: "数値予報",
+    front: "データ同化とは何ですか。",
+    back: "観測値とモデルの推定値を組み合わせ、数値予報の初期値を作る過程です。",
+  },
+  {
+    tag: "防災",
+    front: "キキクルで重視することは何ですか。",
+    back: "危険度の高まりを、避難判断や防災行動に結びつけることです。",
+  },
+  {
+    tag: "実技",
+    front: "答案で方角を書くときの注意点は何ですか。",
+    back: "図の向きや緯度経度、複数時刻の位置関係を確認してから書きます。",
+  },
+  {
+    tag: "実技",
+    front: "『根拠を示せ』への基本対応は何ですか。",
+    back: "場所、時刻、気圧・気温・風・降水などの具体値や変化を示して判断につなげます。",
+  },
+  {
+    tag: "実技",
+    front: "前線解析で見る基本要素は何ですか。",
+    back: "気温傾度、風向の変化、湿り、雲・降水域、気圧の谷などを総合して判断します。",
   },
 ];
 
@@ -293,6 +453,8 @@ const defaultState = {
   weak: [],
   selectedExam: 65,
   examStage: "general",
+  pastExamAnswers: {},
+  writtenNotes: {},
 };
 
 const state = loadState();
@@ -450,6 +612,10 @@ function renderExamStage() {
   const files = pastExams.filter((item) => item.number === selectedExam);
   const stageFiles = files.filter((item) => item.kind === selectedExamStage);
   const answerFiles = files.filter((item) => item.kind === "answer");
+  const practiceMarkup =
+    selectedExamStage === "written"
+      ? renderWrittenPractice()
+      : renderGakkaPractice(selectedExamStage);
 
   $("#exam-stage-panel").innerHTML = `
     <article class="exam-stage-card">
@@ -458,6 +624,7 @@ function renderExamStage() {
         <h3>${stage.label}</h3>
         <p>${stage.guidance}</p>
       </div>
+      ${practiceMarkup}
       <div class="exam-link-list">
         ${stageFiles.map(renderExamLink).join("")}
       </div>
@@ -469,6 +636,82 @@ function renderExamStage() {
       </div>
     </article>
   `;
+}
+
+function renderGakkaPractice(stageId) {
+  const label = stageId === "general" ? "一般知識" : "専門知識";
+  const answered = countAnswered(stageId);
+  return `
+    <section class="exam-practice" aria-label="${label}の解答入力">
+      <div class="practice-head">
+        <div>
+          <h4>${label} 15問</h4>
+          <p>${answered} / 15 問を入力済み</p>
+        </div>
+        <button class="secondary-button" data-clear-stage="${stageId}" type="button">この科目をリセット</button>
+      </div>
+      <div class="exam-question-grid">
+        ${Array.from({ length: 15 }, (_, index) => renderExamQuestion(stageId, index + 1)).join("")}
+      </div>
+    </section>
+  `;
+}
+
+function renderExamQuestion(stageId, questionNumber) {
+  const key = getExamAnswerKey(stageId, questionNumber);
+  const selected = state.pastExamAnswers[key];
+  return `
+    <div class="exam-question-card">
+      <strong>問${questionNumber}</strong>
+      <div class="answer-buttons" role="group" aria-label="問${questionNumber}の解答">
+        ${[1, 2, 3, 4, 5]
+          .map(
+            (choice) => `
+              <button class="${Number(selected) === choice ? "is-selected" : ""}" data-exam-answer="${key}" data-choice-value="${choice}" type="button">
+                ${choice}
+              </button>
+            `
+          )
+          .join("")}
+      </div>
+    </div>
+  `;
+}
+
+function renderWrittenPractice() {
+  return `
+    <section class="exam-practice" aria-label="記述答案メモ">
+      <div class="practice-head">
+        <div>
+          <h4>記述答案メモ</h4>
+          <p>実技1・実技2の答案方針をここに残せます。</p>
+        </div>
+      </div>
+      <div class="written-grid">
+        ${["実技1 問1", "実技1 問2", "実技1 問3", "実技2 問1", "実技2 問2", "実技2 問3"]
+          .map((label) => renderWrittenNote(label))
+          .join("")}
+      </div>
+    </section>
+  `;
+}
+
+function renderWrittenNote(label) {
+  const key = `exam-${selectedExam}-written-${label}`;
+  return `
+    <label class="written-note">
+      <span>${label}</span>
+      <textarea data-written-note="${key}" rows="4" placeholder="根拠、使う図、答案の骨子をメモ">${state.writtenNotes[key] || ""}</textarea>
+    </label>
+  `;
+}
+
+function getExamAnswerKey(stageId, questionNumber) {
+  return `exam-${selectedExam}-${stageId}-${questionNumber}`;
+}
+
+function countAnswered(stageId) {
+  return Array.from({ length: 15 }, (_, index) => getExamAnswerKey(stageId, index + 1)).filter((key) => state.pastExamAnswers[key]).length;
 }
 
 function renderExamLink(file) {
@@ -611,6 +854,33 @@ $("#exam-stepper").addEventListener("click", (event) => {
   state.examStage = selectedExamStage;
   saveState();
   renderExamFlow();
+});
+
+$("#exam-stage-panel").addEventListener("click", (event) => {
+  const answerButton = event.target.closest("[data-exam-answer]");
+  if (answerButton) {
+    state.pastExamAnswers[answerButton.dataset.examAnswer] = Number(answerButton.dataset.choiceValue);
+    saveState();
+    renderExamStage();
+    return;
+  }
+
+  const clearButton = event.target.closest("[data-clear-stage]");
+  if (clearButton) {
+    const stageId = clearButton.dataset.clearStage;
+    Array.from({ length: 15 }, (_, index) => getExamAnswerKey(stageId, index + 1)).forEach((key) => {
+      delete state.pastExamAnswers[key];
+    });
+    saveState();
+    renderExamStage();
+  }
+});
+
+$("#exam-stage-panel").addEventListener("input", (event) => {
+  const textarea = event.target.closest("[data-written-note]");
+  if (!textarea) return;
+  state.writtenNotes[textarea.dataset.writtenNote] = textarea.value;
+  saveState();
 });
 
 $("#next-question").addEventListener("click", nextQuestion);
