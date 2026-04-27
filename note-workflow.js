@@ -172,6 +172,12 @@ const questions = {
   ],
 };
 
+if (window.generatedQuestions) {
+  Object.entries(window.generatedQuestions).forEach(([domain, generated]) => {
+    questions[domain].push(...generated);
+  });
+}
+
 const overviewTopics = [
   {
     title: "気象業務法の入口",
@@ -593,7 +599,8 @@ function answerOverviewQuestion(choiceIndex) {
 function renderQuestion() {
   const list = questions[currentDomain];
   const question = list[currentQuestionIndex];
-  $("#question-domain").textContent = domains.find((domain) => domain.id === currentDomain).label;
+  const domainLabel = domains.find((domain) => domain.id === currentDomain).label;
+  $("#question-domain").textContent = question.tagLabel ? `${domainLabel} / ${question.tagLabel}` : domainLabel;
   $("#question-progress").textContent = `${currentQuestionIndex + 1} / ${list.length}`;
   $("#question-text").textContent = question.text;
   $("#answer-box").hidden = true;
