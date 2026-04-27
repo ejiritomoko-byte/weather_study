@@ -1013,10 +1013,25 @@ $("#exam-select").addEventListener("change", (event) => {
   renderExamFlow();
 });
 
-renderDashboard();
-renderOverview();
-renderQuestion();
-renderCard();
-renderPlan();
-renderExamSelect();
-renderExamFlow();
+function loadLocalPastQuestionBank() {
+  return new Promise((resolve) => {
+    const script = document.createElement("script");
+    script.src = "local-data/past-question-bank.js";
+    script.onload = resolve;
+    script.onerror = resolve;
+    document.head.append(script);
+  });
+}
+
+async function initApp() {
+  await loadLocalPastQuestionBank();
+  renderDashboard();
+  renderOverview();
+  renderQuestion();
+  renderCard();
+  renderPlan();
+  renderExamSelect();
+  renderExamFlow();
+}
+
+initApp();
