@@ -488,6 +488,52 @@ h1 {
   margin-bottom: 16px;
 }
 
+.local-import-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f8fbfb;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+
+.local-import-panel h3 {
+  margin: 0 0 4px;
+  font-size: 1rem;
+}
+
+.local-import-panel p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.file-import-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  color: var(--ink);
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.file-import-button input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .exam-current {
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -1039,7 +1085,8 @@ h1 {
     grid-template-columns: 1fr;
   }
 
-  .practice-head {
+  .practice-head,
+  .local-import-panel {
     align-items: stretch;
     flex-direction: column;
   }

@@ -493,6 +493,7 @@ const defaultState = {
 };
 
 const state = loadState();
+let localQuestionBank = loadLocalQuestionBank();
 let currentDomain = "general";
 let currentQuestionIndex = 0;
 let overviewQuestionIndex = 0;
@@ -513,6 +514,18 @@ function loadState() {
 
 function saveState() {
   localStorage.setItem("weather-study-state", JSON.stringify(state));
+}
+
+function loadLocalQuestionBank() {
+  try {
+    return JSON.parse(localStorage.getItem("weather-study-local-past-questions")) || {};
+  } catch {
+    return {};
+  }
+}
+
+function saveLocalQuestionBank() {
+  localStorage.setItem("weather-study-local-past-questions", JSON.stringify(localQuestionBank));
 }
 
 function showView(viewId) {
@@ -682,8 +695,7 @@ function renderGakkaPractice(stageId) {
 }
 
 function getLocalPastQuestions(stageId) {
-  const bank = window.localPastQuestions || {};
-  const exam = bank[String(selectedExam)] || {};
+  const exam = localQuestionBank[String(selectedExam)] || {};
   return exam[stageId] || [];
 }
 
@@ -1017,11 +1029,38 @@ function loadLocalPastQuestionBank() {
   return new Promise((resolve) => {
     const script = document.createElement("script");
     script.src = "local-data/past-question-bank.js";
-    script.onload = resolve;
+    script.onload = () => {
+      if (window.localPastQuestions) {
+        localQuestionBank = { ...localQuestionBank, ...window.localPastQuestions };
+        saveLocalQuestionBank();
+      }
+      resolve();
+    };
     script.onerror = resolve;
     document.head.append(script);
   });
 }
+
+function renderLocalBankStatus() {
+  const count = Object.values(localQuestionBank).reduce((examSum, exam) => {
+    return examSum + Object.values(exam).reduce((stageSum, questions) => stageSum + questions.length, 0);
+  }, 0);
+  $("#local-bank-status").textContent = count
+    ? `${count}問の自分専用過去問データがこの端末に保存されています。`
+    : "端末内の過去問文字起こしデータを読み込めます。";
+}
+
+$("#local-bank-file").addEventListener("change", async (event) => {
+  const file = event.target.files?.[0];
+  if (!file) return;
+  const text = await file.text();
+  const imported = JSON.parse(text);
+  localQuestionBank = { ...localQuestionBank, ...imported };
+  saveLocalQuestionBank();
+  renderLocalBankStatus();
+  renderExamFlow();
+  event.target.value = "";
+});
 
 async function initApp() {
   await loadLocalPastQuestionBank();
@@ -1031,6 +1070,7 @@ async function initApp() {
   renderCard();
   renderPlan();
   renderExamSelect();
+  renderLocalBankStatus();
   renderExamFlow();
 }
 
