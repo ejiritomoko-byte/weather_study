@@ -658,6 +658,11 @@ function renderExamStage() {
 }
 
 function renderGakkaPractice(stageId) {
+  const localQuestions = getLocalPastQuestions(stageId);
+  if (localQuestions.length) {
+    return renderLocalPastPractice(stageId, localQuestions);
+  }
+
   const label = stageId === "general" ? "一般知識" : "専門知識";
   const answered = countAnswered(stageId);
   return `
@@ -674,6 +679,67 @@ function renderGakkaPractice(stageId) {
       </div>
     </section>
   `;
+}
+
+function getLocalPastQuestions(stageId) {
+  const bank = window.localPastQuestions || {};
+  const exam = bank[String(selectedExam)] || {};
+  return exam[stageId] || [];
+}
+
+function renderLocalPastPractice(stageId, localQuestions) {
+  const label = stageId === "general" ? "一般知識" : "専門知識";
+  const answered = localQuestions.filter((question) => state.pastExamAnswers[getLocalQuestionKey(question)]).length;
+  return `
+    <section class="exam-practice" aria-label="${label}の一問一答">
+      <div class="practice-head">
+        <div>
+          <h4>${label} 一問一答</h4>
+          <p>${answered} / ${localQuestions.length} 問を回答済み</p>
+        </div>
+        <button class="secondary-button" data-clear-local-stage="${stageId}" type="button">この科目をリセット</button>
+      </div>
+      <div class="local-question-list">
+        ${localQuestions.map(renderLocalQuestion).join("")}
+      </div>
+    </section>
+  `;
+}
+
+function renderLocalQuestion(question) {
+  const key = getLocalQuestionKey(question);
+  const selected = state.pastExamAnswers[key];
+  const isAnswered = selected !== undefined;
+  const isCorrect = Number(selected) === question.answer;
+  return `
+    <article class="local-question-card">
+      <div class="local-question-head">
+        <span class="chip">${question.questionNo}</span>
+        <span class="chip">${question.tagLabel || "過去問"}</span>
+      </div>
+      <h4>${question.prompt}</h4>
+      <div class="local-choice-list">
+        ${question.choices
+          .map(
+            (choice, index) => `
+              <button class="${Number(selected) === index ? "is-selected" : ""}" data-local-answer="${key}" data-choice-value="${index}" type="button">
+                <span>${index + 1}</span>${choice}
+              </button>
+            `
+          )
+          .join("")}
+      </div>
+      ${
+        isAnswered
+          ? `<div class="answer-box local-result"><strong>${isCorrect ? "正解" : "もう一歩"}</strong><p>${question.explanation}</p></div>`
+          : ""
+      }
+    </article>
+  `;
+}
+
+function getLocalQuestionKey(question) {
+  return `local-${question.id}`;
 }
 
 function renderExamQuestion(stageId, questionNumber) {
@@ -867,6 +933,24 @@ $("#exam-stepper").addEventListener("click", (event) => {
 });
 
 $("#exam-stage-panel").addEventListener("click", (event) => {
+  const localAnswerButton = event.target.closest("[data-local-answer]");
+  if (localAnswerButton) {
+    state.pastExamAnswers[localAnswerButton.dataset.localAnswer] = Number(localAnswerButton.dataset.choiceValue);
+    saveState();
+    renderExamStage();
+    return;
+  }
+
+  const clearLocalButton = event.target.closest("[data-clear-local-stage]");
+  if (clearLocalButton) {
+    getLocalPastQuestions(clearLocalButton.dataset.clearLocalStage).forEach((question) => {
+      delete state.pastExamAnswers[getLocalQuestionKey(question)];
+    });
+    saveState();
+    renderExamStage();
+    return;
+  }
+
   const answerButton = event.target.closest("[data-exam-answer]");
   if (answerButton) {
     state.pastExamAnswers[answerButton.dataset.examAnswer] = Number(answerButton.dataset.choiceValue);

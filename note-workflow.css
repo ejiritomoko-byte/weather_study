@@ -709,6 +709,73 @@ h1 {
   line-height: 1.6;
 }
 
+.local-question-list {
+  display: grid;
+  gap: 14px;
+}
+
+.local-question-card {
+  display: grid;
+  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  padding: 14px;
+}
+
+.local-question-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.local-question-card h4 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.65;
+  white-space: pre-line;
+}
+
+.local-choice-list {
+  display: grid;
+  gap: 8px;
+}
+
+.local-choice-list button {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 10px;
+  align-items: start;
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  color: var(--ink);
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.local-choice-list button span {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: #eef3f5;
+  color: var(--teal-dark);
+  font-weight: 900;
+}
+
+.local-choice-list button.is-selected {
+  border-color: var(--teal);
+  background: #f0faf8;
+}
+
+.local-result {
+  margin-top: 0;
+}
+
 .domain-card header {
   display: flex;
   justify-content: space-between;
